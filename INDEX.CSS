@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Bokka Nandini - Aspiring Software Test Engineer specializing in Manual Testing, SDLC, STLC, Python, and SQL.">
+    <meta name="keywords" content="Bokka Nandini, Software Test Engineer, QA Engineer, Manual Testing, SDLC, STLC, Python, SQL, Jira">
+    <meta name="author" content="Bokka Nandini">
+    
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Bokka Nandini | Aspiring Software Test Engineer">
+    <meta property="og:description" content="Professional portfolio of Bokka Nandini featuring QA expertise, technical skills, projects, and educational qualifications.">
+    <meta property="og:type" content="website">
+
+    <title>Bokka Nandini | Software Test Engineer Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Header / Navigation Bar -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#hero" class="logo-link" aria-label="Home">
+                <div class="brand-logo">
+                    <span class="logo-icon">N</span>
+                    <span class="logo-text">NANDINI<span>.QA</span></span>
+                </div>
+            </a>
+
+            <nav class="desktop-nav">
+                <a href="#about" class="nav-link"><i data-lucide="user"></i> About</a>
+                <a href="#skills" class="nav-link"><i data-lucide="cpu"></i> Skills</a>
+                <a href="#projects" class="nav-link"><i data-lucide="folder-git-2"></i> Projects</a>
+                <a href="#education" class="nav-link"><i data-lucide="graduation-cap"></i> Education</a>
+                <a href="#certifications" class="nav-link"><i data-lucide="award"></i> Certifications</a>
+                <a href="#testimonials" class="nav-link"><i data-lucide="quote"></i> Testimonials</a>
+                <a href="#contact" class="nav-link nav-cta"><i data-lucide="mail"></i> Contact</a>
+            </nav>
+
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu">
+                <i data-lucide="menu" id="menuIcon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div class="mobile-nav" id="mobileNav">
+            <a href="#about" class="mobile-nav-link"><i data-lucide="user"></i> About</a>
+            <a href="#skills" class="mobile-nav-link"><i data-lucide="cpu"></i> Skills</a>
+            <a href="#projects" class="mobile-nav-link"><i data-lucide="folder-git-2"></i> Projects</a>
+            <a href="#education" class="mobile-nav-link"><i data-lucide="graduation-cap"></i> Education</a>
+            <a href="#certifications" class="mobile-nav-link"><i data-lucide="award"></i> Certifications</a>
+            <a href="#testimonials" class="mobile-nav-link"><i data-lucide="quote"></i> Testimonials</a>
+            <a href="#contact" class="mobile-nav-link"><i data-lucide="mail"></i> Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="status-badge">
+                        <span class="pulse-dot"></span>
+                        <span>Open to Software Test Engineer Roles</span>
+                    </div>
+                    <h1 class="hero-title">BOKKA NANDINI</h1>
+                    <h2 class="hero-subtitle">Aspiring Software Test Engineer</h2>
+                    <p class="hero-description">
+                        Passionate about Quality Assurance and Automation Testing[cite: 2]. Proficient in Manual Testing methodologies, SDLC, STLC, Test Case Design, and Defect Life Cycle with technical proficiency in Python, SQL, and Jira[cite: 2].
+                    </p>
+                    <div class="hero-tags">
+                        <span class="tech-chip"><i data-lucide="check-circle"></i> Manual Testing</span>
+                        <span class="tech-chip"><i data-lucide="terminal"></i> Python</span>
+                        <span class="tech-chip"><i data-lucide="database"></i> SQL</span>
+                        <span class="tech-chip"><i data-lucide="bug"></i> Jira</span>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary"><i data-lucide="layout-grid"></i> View Projects</a>
+                        <a href="images/resume.pdf" download class="btn btn-secondary"><i data-lucide="download"></i> Download Resume</a>
+                        <a href="#contact" class="btn btn-outline"><i data-lucide="send"></i> Contact Me</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">01. Overview</span>
+                    <h2 class="section-title">Professional Summary</h2>
+                    <div class="header-line"></div>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i data-lucide="shield-check"></i>
+                    </div>
+                    <div class="about-text">
+                        <p>
+                            Aspiring Software Test Engineer with knowledge of Manual Testing, SDLC, STLC, Test Case Design, Defect Life Cycle, Functional, Regression, Smoke, Sanity and Black Box Testing[cite: 2]. Skilled in Python, SQL, Jira and MS Excel[cite: 2]. Passionate about QA and Automation Testing[cite: 2].
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section-padding bg-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">02. Expertise</span>
+                    <h2 class="section-title">Technical & Core Skills</h2>
+                    <div class="header-line"></div>
+                </div>
+                
+                <div class="skills-grid">
+                    <!-- Category 1: Manual Testing -->
+                    <div class="skill-card">
+                        <div class="card-header">
+                            <i data-lucide="check-square" class="card-icon"></i>
+                            <h3>Manual Testing</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li><i data-lucide="chevron-right"></i> SDLC & STLC</li>
+                            <li><i data-lucide="chevron-right"></i> Test Scenarios & Test Cases</li>
+                            <li><i data-lucide="chevron-right"></i> Requirement Traceability Matrix (RTM)</li>
+                            <li><i data-lucide="chevron-right"></i> Defect Life Cycle</li>
+                            <li><i data-lucide="chevron-right"></i> Functional Testing</li>
+                            <li><i data-lucide="chevron-right"></i> Regression Testing</li>
+                            <li><i data-lucide="chevron-right"></i> Smoke & Sanity Testing</li>
+                            <li><i data-lucide="chevron-right"></i> Black Box Testing</li>
+                        </ul>
+                    </div>
+
+                    <!-- Category 2: Programming & Database -->
+                    <div class="skill-card">
+                        <div class="card-header">
+                            <i data-lucide="code-2" class="card-icon"></i>
+                            <h3>Programming & Database</h3>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag-badge"><i data-lucide="terminal"></i> Python</span>
+                            <span class="skill-tag-badge"><i data-lucide="database"></i> SQL</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 3: Tools -->
+                    <div class="skill-card">
+                        <div class="card-header">
+                            <i data-lucide="wrench" class="card-icon"></i>
+                            <h3>Testing & Productivity Tools</h3>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag-badge"><i data-lucide="bug"></i> Jira</span>
+                            <span class="skill-tag-badge"><i data-lucide="file-spreadsheet"></i> MS Excel</span>
+                            <span class="skill-tag-badge"><i data-lucide="file-text"></i> MS Word</span>
+                            <span class="skill-tag-badge"><i data-lucide="presentation"></i> PowerPoint</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 4: Soft Skills -->
+                    <div class="skill-card">
+                        <div class="card-header">
+                            <i data-lucide="users" class="card-icon"></i>
+                            <h3>Soft Skills</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li><i data-lucide="chevron-right"></i> Communication</li>
+                            <li><i data-lucide="chevron-right"></i> Analytical Thinking</li>
+                            <li><i data-lucide="chevron-right"></i> Problem Solving</li>
+                            <li><i data-lucide="chevron-right"></i> Time Management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">03. Portfolio</span>
+                    <h2 class="section-title">Featured Project</h2>
+                    <div class="header-line"></div>
+                </div>
+
+                <div class="projects-container">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-type">Academic / Systems Project</div>
+                            <h3 class="project-title">Online Employee Tracking System</h3>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                Developed and maintained employee/project records to streamline tracking operations and maintain database integrity[cite: 2].
+                            </p>
+                            <div class="project-highlights">
+                                <h4>Key Deliverables & Work:</h4>
+                                <ul>
+                                    <li><i data-lucide="check"></i> Developed and maintained employee/project records[cite: 2].</li>
+                                    <li><i data-lucide="check"></i> Improved tracking efficiency and record accuracy[cite: 2].</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section-padding bg-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">04. Background</span>
+                    <h2 class="section-title">Education Qualifications</h2>
+                    <div class="header-line"></div>
+                </div>
+
+                <div class="timeline">
+                    <!-- Masters -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2023 - 2025</span>
+                            <h3 class="degree">M.Sc. Mathematics</h3>
+                            <div class="grade-badge">CGPA: 7.5</div>
+                        </div>
+                    </div>
+
+                    <!-- Bachelors -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2020 - 2023</span>
+                            <h3 class="degree">B.Sc. Computer Science</h3>
+                            <div class="grade-badge">CGPA: 7.03</div>
+                        </div>
+                    </div>
+
+                    <!-- Intermediate -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Intermediate</span>
+                            <h3 class="degree">Higher Secondary Education</h3>
+                            <div class="grade-badge">CGPA: 8.03</div>
+                        </div>
+                    </div>
+
+                    <!-- SSC -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">SSC</span>
+                            <h3 class="degree">Secondary School Certificate</h3>
+                            <div class="grade-badge">CGPA: 9.2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">05. Credentials</span>
+                    <h2 class="section-title">Certifications</h2>
+                    <div class="header-line"></div>
+                </div>
+
+                <div class="certifications-grid">
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <i data-lucide="award"></i>
+                        </div>
+                        <div class="cert-details">
+                            <h3>Manual Testing</h3>
+                            <p class="cert-issuer">Professional Certification</p>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <i data-lucide="award"></i>
+                        </div>
+                        <div class="cert-details">
+                            <h3>AI for Data Analysis</h3>
+                            <p class="cert-issuer">Google (Coursera)</p>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <i data-lucide="award"></i>
+                        </div>
+                        <div class="cert-details">
+                            <h3>Introduction to Generative AI</h3>
+                            <p class="cert-issuer">IBM (edX)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="section-padding bg-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">06. Endorsements</span>
+                    <h2 class="section-title">Recommendations</h2>
+                    <div class="header-line"></div>
+                </div>
+
+                <div class="carousel-wrapper">
+                    <div class="testimonial-carousel" id="testimonialCarousel">
+                        <div class="testimonial-card active">
+                            <div class="quote-icon"><i data-lucide="quote"></i></div>
+                            <p class="testimonial-text">Professional recommendations and peer endorsements can be displayed in this section.</p>
+                            <div class="testimonial-author">
+                                <strong>Professional Endorsement</strong>
+                                <span>Placeholder Card</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <div class="quote-icon"><i data-lucide="quote"></i></div>
+                            <p class="testimonial-text">Demonstrates a strong analytical mindset, attention to detail in QA testing, and solid foundation in software testing principles.</p>
+                            <div class="testimonial-author">
+                                <strong>Academic / Technical Referee</strong>
+                                <span>Placeholder Card</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-controls">
+                        <button class="carousel-btn" id="prevBtn" aria-label="Previous Testimonial"><i data-lucide="chevron-left"></i></button>
+                        <div class="carousel-indicators" id="carouselIndicators">
+                            <span class="indicator active" data-index="0"></span>
+                            <span class="indicator" data-index="1"></span>
+                        </div>
+                        <button class="carousel-btn" id="nextBtn" aria-label="Next Testimonial"><i data-lucide="chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">07. Connect</span>
+                    <h2 class="section-title">Get In Touch</h2>
+                    <div class="header-line"></div>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info-card">
+                        <h3>Contact Information</h3>
+                        <p>Feel free to reach out for software testing opportunities or professional discussions.</p>
+                        
+                        <div class="contact-list">
+                            <a href="mailto:bnandhini9490@gmail.com" class="contact-item">
+                                <div class="contact-icon"><i data-lucide="mail"></i></div>
+                                <div>
+                                    <span class="contact-label">Email</span>
+                                    <span class="contact-value">bnandhini9490@gmail.com</span>
+                                </div>
+                            </a>
+
+                            <a href="tel:+918639451520" class="contact-item">
+                                <div class="contact-icon"><i data-lucide="phone"></i></div>
+                                <div>
+                                    <span class="contact-label">Phone</span>
+                                    <span class="contact-value">+91 8639451520</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="contact-actions">
+                            <a href="images/resume.pdf" download class="btn btn-primary"><i data-lucide="file-down"></i> Download Original Resume</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <span class="logo-text">BOKKA NANDINI</span>
+                <span class="footer-title">Aspiring Software Test Engineer</span>
+            </div>
+            <p class="copyright">
+                &copy; <span id="currentYear"></span> Bokka Nandini. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
