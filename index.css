@@ -1,413 +1,989 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Bokka Nandini - Aspiring Software Test Engineer specializing in Manual Testing, SDLC, STLC, Python, and SQL.">
-    <meta name="keywords" content="Bokka Nandini, Software Test Engineer, QA Engineer, Manual Testing, SDLC, STLC, Python, SQL, Jira">
-    <meta name="author" content="Bokka Nandini">
+/* ==========================================================================
+   DESIGN SYSTEM & VARIABLES (Dark Steel Blue Aesthetic)
+   ========================================================================== */
+:root {
+    /* Color Palette */
+    --bg-primary: #0a0f18;
+    --bg-secondary: #111827;
+    --bg-card: #1e293b;
+    --bg-card-hover: #24334a;
     
-    <!-- Open Graph Metadata -->
-    <meta property="og:title" content="Bokka Nandini | Aspiring Software Test Engineer">
-    <meta property="og:description" content="Professional portfolio of Bokka Nandini featuring QA expertise, technical skills, projects, and educational qualifications.">
-    <meta property="og:type" content="website">
+    --steel-blue-light: #60a5fa;
+    --steel-blue: #3b82f6;
+    --steel-blue-dark: #1d4ed8;
+    
+    --accent-cyan: #38bdf8;
+    --accent-glow: rgba(56, 189, 248, 0.15);
+    
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    
+    --border-color: #1e293b;
+    --border-highlight: #334155;
+    
+    /* Typography */
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    
+    /* Structure & Spacing */
+    --navbar-height: 70px;
+    --container-max-width: 1200px;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+}
 
-    <title>Bokka Nandini | Software Test Engineer Portfolio</title>
+/* ==========================================================================
+   RESET & BASE STYLES
+   ========================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
 
-    <!-- Lucide Icons CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
 
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-    <!-- Header / Navigation Bar -->
-    <header class="header">
-        <div class="nav-container">
-            <a href="#hero" class="logo-link" aria-label="Home">
-                <div class="brand-logo">
-                    <span class="logo-icon">N</span>
-                    <span class="logo-text">NANDINI<span>.QA</span></span>
-                </div>
-            </a>
+ul {
+    list-style: none;
+}
 
-            <nav class="desktop-nav">
-                <a href="#about" class="nav-link"><i data-lucide="user"></i> About</a>
-                <a href="#skills" class="nav-link"><i data-lucide="cpu"></i> Skills</a>
-                <a href="#projects" class="nav-link"><i data-lucide="folder-git-2"></i> Projects</a>
-                <a href="#education" class="nav-link"><i data-lucide="graduation-cap"></i> Education</a>
-                <a href="#certifications" class="nav-link"><i data-lucide="award"></i> Certifications</a>
-                <a href="#testimonials" class="nav-link"><i data-lucide="quote"></i> Testimonials</a>
-                <a href="#contact" class="nav-link nav-cta"><i data-lucide="mail"></i> Contact</a>
-            </nav>
+/* Grid overlay background effect */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: -1;
+}
 
-            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu">
-                <i data-lucide="menu" id="menuIcon"></i>
-            </button>
-        </div>
+/* ==========================================================================
+   LAYOUT CONTAINERS & SECTION HEADERS
+   ========================================================================== */
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
 
-        <!-- Mobile Navigation Menu -->
-        <div class="mobile-nav" id="mobileNav">
-            <a href="#about" class="mobile-nav-link"><i data-lucide="user"></i> About</a>
-            <a href="#skills" class="mobile-nav-link"><i data-lucide="cpu"></i> Skills</a>
-            <a href="#projects" class="mobile-nav-link"><i data-lucide="folder-git-2"></i> Projects</a>
-            <a href="#education" class="mobile-nav-link"><i data-lucide="graduation-cap"></i> Education</a>
-            <a href="#certifications" class="mobile-nav-link"><i data-lucide="award"></i> Certifications</a>
-            <a href="#testimonials" class="mobile-nav-link"><i data-lucide="quote"></i> Testimonials</a>
-            <a href="#contact" class="mobile-nav-link"><i data-lucide="mail"></i> Contact</a>
-        </div>
-    </header>
+.section-padding {
+    padding: 6rem 0;
+    scroll-margin-top: var(--navbar-height);
+}
 
-    <main>
-        <!-- Hero Section -->
-        <section id="hero" class="hero-section">
-            <div class="container hero-container">
-                <div class="hero-content">
-                    <div class="status-badge">
-                        <span class="pulse-dot"></span>
-                        <span>Open to Software Test Engineer Roles</span>
-                    </div>
-                    <h1 class="hero-title">BOKKA NANDINI</h1>
-                    <h2 class="hero-subtitle">Aspiring Software Test Engineer</h2>
-                    <p class="hero-description">
-                        Passionate about Quality Assurance and Automation Testing[cite: 2]. Proficient in Manual Testing methodologies, SDLC, STLC, Test Case Design, and Defect Life Cycle with technical proficiency in Python, SQL, and Jira[cite: 2].
-                    </p>
-                    <div class="hero-tags">
-                        <span class="tech-chip"><i data-lucide="check-circle"></i> Manual Testing</span>
-                        <span class="tech-chip"><i data-lucide="terminal"></i> Python</span>
-                        <span class="tech-chip"><i data-lucide="database"></i> SQL</span>
-                        <span class="tech-chip"><i data-lucide="bug"></i> Jira</span>
-                    </div>
-                    <div class="hero-actions">
-                        <a href="#projects" class="btn btn-primary"><i data-lucide="layout-grid"></i> View Projects</a>
-                        <a href="images/resume.pdf" download class="btn btn-secondary"><i data-lucide="download"></i> Download Resume</a>
-                        <a href="#contact" class="btn btn-outline"><i data-lucide="send"></i> Contact Me</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+.bg-alt {
+    background-color: var(--bg-secondary);
+}
 
-        <!-- About Section -->
-        <section id="about" class="section-padding">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">01. Overview</span>
-                    <h2 class="section-title">Professional Summary</h2>
-                    <div class="header-line"></div>
-                </div>
-                <div class="about-card">
-                    <div class="about-icon">
-                        <i data-lucide="shield-check"></i>
-                    </div>
-                    <div class="about-text">
-                        <p>
-                            Aspiring Software Test Engineer with knowledge of Manual Testing, SDLC, STLC, Test Case Design, Defect Life Cycle, Functional, Regression, Smoke, Sanity and Black Box Testing[cite: 2]. Skilled in Python, SQL, Jira and MS Excel[cite: 2]. Passionate about QA and Automation Testing[cite: 2].
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+.section-header {
+    margin-bottom: 3rem;
+    position: relative;
+}
 
-        <!-- Skills Section -->
-        <section id="skills" class="section-padding bg-alt">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">02. Expertise</span>
-                    <h2 class="section-title">Technical & Core Skills</h2>
-                    <div class="header-line"></div>
-                </div>
-                
-                <div class="skills-grid">
-                    <!-- Category 1: Manual Testing -->
-                    <div class="skill-card">
-                        <div class="card-header">
-                            <i data-lucide="check-square" class="card-icon"></i>
-                            <h3>Manual Testing</h3>
-                        </div>
-                        <ul class="skill-list">
-                            <li><i data-lucide="chevron-right"></i> SDLC & STLC</li>
-                            <li><i data-lucide="chevron-right"></i> Test Scenarios & Test Cases</li>
-                            <li><i data-lucide="chevron-right"></i> Requirement Traceability Matrix (RTM)</li>
-                            <li><i data-lucide="chevron-right"></i> Defect Life Cycle</li>
-                            <li><i data-lucide="chevron-right"></i> Functional Testing</li>
-                            <li><i data-lucide="chevron-right"></i> Regression Testing</li>
-                            <li><i data-lucide="chevron-right"></i> Smoke & Sanity Testing</li>
-                            <li><i data-lucide="chevron-right"></i> Black Box Testing</li>
-                        </ul>
-                    </div>
+.section-tag {
+    font-family: var(--font-mono);
+    color: var(--accent-cyan);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 0.5rem;
+}
 
-                    <!-- Category 2: Programming & Database -->
-                    <div class="skill-card">
-                        <div class="card-header">
-                            <i data-lucide="code-2" class="card-icon"></i>
-                            <h3>Programming & Database</h3>
-                        </div>
-                        <div class="skill-tags">
-                            <span class="skill-tag-badge"><i data-lucide="terminal"></i> Python</span>
-                            <span class="skill-tag-badge"><i data-lucide="database"></i> SQL</span>
-                        </div>
-                    </div>
+.section-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+}
 
-                    <!-- Category 3: Tools -->
-                    <div class="skill-card">
-                        <div class="card-header">
-                            <i data-lucide="wrench" class="card-icon"></i>
-                            <h3>Testing & Productivity Tools</h3>
-                        </div>
-                        <div class="skill-tags">
-                            <span class="skill-tag-badge"><i data-lucide="bug"></i> Jira</span>
-                            <span class="skill-tag-badge"><i data-lucide="file-spreadsheet"></i> MS Excel</span>
-                            <span class="skill-tag-badge"><i data-lucide="file-text"></i> MS Word</span>
-                            <span class="skill-tag-badge"><i data-lucide="presentation"></i> PowerPoint</span>
-                        </div>
-                    </div>
+.header-line {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--steel-blue), transparent);
+    margin-top: 0.75rem;
+    border-radius: 2px;
+}
 
-                    <!-- Category 4: Soft Skills -->
-                    <div class="skill-card">
-                        <div class="card-header">
-                            <i data-lucide="users" class="card-icon"></i>
-                            <h3>Soft Skills</h3>
-                        </div>
-                        <ul class="skill-list">
-                            <li><i data-lucide="chevron-right"></i> Communication</li>
-                            <li><i data-lucide="chevron-right"></i> Analytical Thinking</li>
-                            <li><i data-lucide="chevron-right"></i> Problem Solving</li>
-                            <li><i data-lucide="chevron-right"></i> Time Management</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+/* ==========================================================================
+   HEADER & NAVIGATION BAR
+   ========================================================================== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--navbar-height);
+    background: rgba(10, 15, 24, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    transition: var(--transition-normal);
+}
 
-        <!-- Projects Section -->
-        <section id="projects" class="section-padding">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">03. Portfolio</span>
-                    <h2 class="section-title">Featured Project</h2>
-                    <div class="header-line"></div>
-                </div>
+.nav-container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-                <div class="projects-container">
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-type">Academic / Systems Project</div>
-                            <h3 class="project-title">Online Employee Tracking System</h3>
-                        </div>
-                        <div class="project-body">
-                            <p class="project-description">
-                                Developed and maintained employee/project records to streamline tracking operations and maintain database integrity[cite: 2].
-                            </p>
-                            <div class="project-highlights">
-                                <h4>Key Deliverables & Work:</h4>
-                                <ul>
-                                    <li><i data-lucide="check"></i> Developed and maintained employee/project records[cite: 2].</li>
-                                    <li><i data-lucide="check"></i> Improved tracking efficiency and record accuracy[cite: 2].</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
 
-        <!-- Education Section -->
-        <section id="education" class="section-padding bg-alt">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">04. Background</span>
-                    <h2 class="section-title">Education Qualifications</h2>
-                    <div class="header-line"></div>
-                </div>
+.logo-icon {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, var(--steel-blue), var(--steel-blue-dark));
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    font-weight: 700;
+}
 
-                <div class="timeline">
-                    <!-- Masters -->
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-date">2023 - 2025</span>
-                            <h3 class="degree">M.Sc. Mathematics</h3>
-                            <div class="grade-badge">CGPA: 7.5</div>
-                        </div>
-                    </div>
+.logo-text span {
+    color: var(--accent-cyan);
+}
 
-                    <!-- Bachelors -->
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-date">2020 - 2023</span>
-                            <h3 class="degree">B.Sc. Computer Science</h3>
-                            <div class="grade-badge">CGPA: 7.03</div>
-                        </div>
-                    </div>
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
 
-                    <!-- Intermediate -->
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-date">Intermediate</span>
-                            <h3 class="degree">Higher Secondary Education</h3>
-                            <div class="grade-badge">CGPA: 8.03</div>
-                        </div>
-                    </div>
+.nav-link {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    transition: var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
 
-                    <!-- SSC -->
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-date">SSC</span>
-                            <h3 class="degree">Secondary School Certificate</h3>
-                            <div class="grade-badge">CGPA: 9.2</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+.nav-link svg {
+    width: 16px;
+    height: 16px;
+}
 
-        <!-- Certifications Section -->
-        <section id="certifications" class="section-padding">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">05. Credentials</span>
-                    <h2 class="section-title">Certifications</h2>
-                    <div class="header-line"></div>
-                </div>
+.nav-link:hover, .nav-link.active {
+    color: var(--accent-cyan);
+}
 
-                <div class="certifications-grid">
-                    <div class="cert-card">
-                        <div class="cert-icon">
-                            <i data-lucide="award"></i>
-                        </div>
-                        <div class="cert-details">
-                            <h3>Manual Testing</h3>
-                            <p class="cert-issuer">Professional Certification</p>
-                        </div>
-                    </div>
+.nav-cta {
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid var(--steel-blue);
+    padding: 0.4rem 1rem;
+    border-radius: var(--radius-sm);
+    color: var(--steel-blue-light);
+}
 
-                    <div class="cert-card">
-                        <div class="cert-icon">
-                            <i data-lucide="award"></i>
-                        </div>
-                        <div class="cert-details">
-                            <h3>AI for Data Analysis</h3>
-                            <p class="cert-issuer">Google (Coursera)</p>
-                        </div>
-                    </div>
+.nav-cta:hover {
+    background: var(--steel-blue);
+    color: #fff;
+}
 
-                    <div class="cert-card">
-                        <div class="cert-icon">
-                            <i data-lucide="award"></i>
-                        </div>
-                        <div class="cert-details">
-                            <h3>Introduction to Generative AI</h3>
-                            <p class="cert-issuer">IBM (edX)</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+.hamburger-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: 0.5rem;
+}
 
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="section-padding bg-alt">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">06. Endorsements</span>
-                    <h2 class="section-title">Recommendations</h2>
-                    <div class="header-line"></div>
-                </div>
+.hamburger-btn svg {
+    width: 24px;
+    height: 24px;
+}
 
-                <div class="carousel-wrapper">
-                    <div class="testimonial-carousel" id="testimonialCarousel">
-                        <div class="testimonial-card active">
-                            <div class="quote-icon"><i data-lucide="quote"></i></div>
-                            <p class="testimonial-text">Professional recommendations and peer endorsements can be displayed in this section.</p>
-                            <div class="testimonial-author">
-                                <strong>Professional Endorsement</strong>
-                                <span>Placeholder Card</span>
-                            </div>
-                        </div>
+/* Mobile Nav Drawer */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: var(--navbar-height);
+    left: 0;
+    width: 100%;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-highlight);
+    padding: 1.5rem;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    z-index: 999;
+}
 
-                        <div class="testimonial-card">
-                            <div class="quote-icon"><i data-lucide="quote"></i></div>
-                            <p class="testimonial-text">Demonstrates a strong analytical mindset, attention to detail in QA testing, and solid foundation in software testing principles.</p>
-                            <div class="testimonial-author">
-                                <strong>Academic / Technical Referee</strong>
-                                <span>Placeholder Card</span>
-                            </div>
-                        </div>
-                    </div>
+.mobile-nav.open {
+    display: flex;
+}
 
-                    <div class="carousel-controls">
-                        <button class="carousel-btn" id="prevBtn" aria-label="Previous Testimonial"><i data-lucide="chevron-left"></i></button>
-                        <div class="carousel-indicators" id="carouselIndicators">
-                            <span class="indicator active" data-index="0"></span>
-                            <span class="indicator" data-index="1"></span>
-                        </div>
-                        <button class="carousel-btn" id="nextBtn" aria-label="Next Testimonial"><i data-lucide="chevron-right"></i></button>
-                    </div>
-                </div>
-            </div>
-        </section>
+.mobile-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    padding: 0.5rem 0;
+}
 
-        <!-- Contact Section -->
-        <section id="contact" class="section-padding">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">07. Connect</span>
-                    <h2 class="section-title">Get In Touch</h2>
-                    <div class="header-line"></div>
-                </div>
+.mobile-nav-link:hover {
+    color: var(--accent-cyan);
+}
 
-                <div class="contact-grid">
-                    <div class="contact-info-card">
-                        <h3>Contact Information</h3>
-                        <p>Feel free to reach out for software testing opportunities or professional discussions.</p>
-                        
-                        <div class="contact-list">
-                            <a href="mailto:bnandhini9490@gmail.com" class="contact-item">
-                                <div class="contact-icon"><i data-lucide="mail"></i></div>
-                                <div>
-                                    <span class="contact-label">Email</span>
-                                    <span class="contact-value">bnandhini9490@gmail.com</span>
-                                </div>
-                            </a>
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: var(--navbar-height);
+    position: relative;
+}
 
-                            <a href="tel:+918639451520" class="contact-item">
-                                <div class="contact-icon"><i data-lucide="phone"></i></div>
-                                <div>
-                                    <span class="contact-label">Phone</span>
-                                    <span class="contact-value">+91 8639451520</span>
-                                </div>
-                            </a>
-                        </div>
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(56, 189, 248, 0.08);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.825rem;
+    font-family: var(--font-mono);
+    color: var(--accent-cyan);
+    margin-bottom: 1.5rem;
+}
 
-                        <div class="contact-actions">
-                            <a href="images/resume.pdf" download class="btn btn-primary"><i data-lucide="file-down"></i> Download Original Resume</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-cyan);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent-cyan);
+}
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-container">
-            <div class="footer-brand">
-                <span class="logo-text">BOKKA NANDINI</span>
-                <span class="footer-title">Aspiring Software Test Engineer</span>
-            </div>
-            <p class="copyright">
-                &copy; <span id="currentYear"></span> Bokka Nandini. All Rights Reserved.
-            </p>
-        </div>
-    </footer>
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-    <script src="index.js"></script>
-</body>
-</html>
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--steel-blue-light);
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+}
+
+.hero-description {
+    max-width: 650px;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+}
+
+.tech-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 0.35rem 0.75rem;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.tech-chip svg {
+    width: 14px;
+    height: 14px;
+    color: var(--steel-blue-light);
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.btn-primary {
+    background: var(--steel-blue);
+    color: #fff;
+    border: 1px solid var(--steel-blue);
+}
+
+.btn-primary:hover {
+    background: var(--steel-blue-dark);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+}
+
+.btn-secondary {
+    background: var(--bg-card);
+    color: var(--text-primary);
+    border: 1px solid var(--border-highlight);
+}
+
+.btn-secondary:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--steel-blue);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--accent-cyan);
+    border: 1px solid var(--accent-cyan);
+}
+
+.btn-outline:hover {
+    background: var(--accent-glow);
+}
+
+/* ==========================================================================
+   ABOUT SECTION
+   ========================================================================== */
+.about-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.about-icon {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--steel-blue-light);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-highlight);
+}
+
+.about-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.about-text p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* ==========================================================================
+   SKILLS SECTION
+   ========================================================================== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1.75rem;
+    transition: var(--transition-fast);
+}
+
+.skill-card:hover {
+    border-color: var(--steel-blue);
+    transform: translateY(-2px);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.75rem;
+}
+
+.card-icon {
+    width: 22px;
+    height: 22px;
+    color: var(--accent-cyan);
+}
+
+.card-header h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.skill-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.925rem;
+}
+
+.skill-list li svg {
+    width: 14px;
+    height: 14px;
+    color: var(--steel-blue-light);
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-tag-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-highlight);
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    color: var(--text-primary);
+}
+
+.skill-tag-badge svg {
+    width: 14px;
+    height: 14px;
+    color: var(--accent-cyan);
+}
+
+/* ==========================================================================
+   PROJECTS SECTION
+   ========================================================================== */
+.projects-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--steel-blue);
+}
+
+.project-type {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent-cyan);
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-description {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.project-highlights h4 {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.project-highlights ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.project-highlights li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.925rem;
+}
+
+.project-highlights li svg {
+    width: 16px;
+    height: 16px;
+    color: var(--accent-cyan);
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+/* ==========================================================================
+   EDUCATION TIMELINE
+   ========================================================================== */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border-highlight);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -2rem;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    border: 3px solid var(--steel-blue);
+}
+
+.timeline-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+}
+
+.timeline-date {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent-cyan);
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.degree {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.grade-badge {
+    display: inline-block;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: var(--steel-blue-light);
+    font-family: var(--font-mono);
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   CERTIFICATIONS SECTION
+   ========================================================================== */
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.cert-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    transition: var(--transition-fast);
+}
+
+.cert-card:hover {
+    border-color: var(--steel-blue);
+    transform: translateY(-2px);
+}
+
+.cert-icon {
+    background: rgba(56, 189, 248, 0.1);
+    color: var(--accent-cyan);
+    padding: 0.75rem;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cert-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.cert-details h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.cert-issuer {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   TESTIMONIALS SECTION
+   ========================================================================== */
+.carousel-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.testimonial-carousel {
+    position: relative;
+    min-height: 180px;
+}
+
+.testimonial-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.testimonial-card.active {
+    display: flex;
+    opacity: 1;
+}
+
+.quote-icon svg {
+    width: 28px;
+    height: 28px;
+    color: var(--steel-blue);
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--border-color);
+    padding-top: 0.75rem;
+}
+
+.testimonial-author strong {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.testimonial-author span {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.carousel-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border-highlight);
+    color: var(--text-primary);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.carousel-btn:hover {
+    background: var(--steel-blue);
+    border-color: var(--steel-blue);
+}
+
+.carousel-indicators {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border-highlight);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.indicator.active {
+    background: var(--accent-cyan);
+    width: 24px;
+    border-radius: 5px;
+}
+
+/* ==========================================================================
+   CONTACT SECTION
+   ========================================================================== */
+.contact-grid {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-info-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+}
+
+.contact-info-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info-card p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    border-radius: var(--radius-md);
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    transition: var(--transition-fast);
+}
+
+.contact-item:hover {
+    border-color: var(--steel-blue);
+}
+
+.contact-icon {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--steel-blue-light);
+    padding: 0.6rem;
+    border-radius: var(--radius-sm);
+    display: flex;
+}
+
+.contact-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.contact-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-family: var(--font-mono);
+}
+
+.contact-value {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.footer {
+    background: var(--bg-primary);
+    border-top: 1px solid var(--border-color);
+    padding: 2.5rem 0;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-brand .logo-text {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.footer-title {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+    
+    .hamburger-btn {
+        display: block;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+    
+    .about-card {
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .timeline {
+        padding-left: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
