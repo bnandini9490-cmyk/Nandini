@@ -16,3 +16,4 @@ A simple personal portfolio showcasing my resume, skills, and web projects.
 1. Clone the repo
    ```bash
    git clone https://github.com/bnandini9490-cmyk/portfolio.git
+   
